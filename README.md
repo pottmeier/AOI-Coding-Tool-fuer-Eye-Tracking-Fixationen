@@ -22,17 +22,20 @@ pip install -r requirements.txt
 ## Nutzung
 
 ```bash
-python main.py video.mp4 fixationen.csv
+python main.py /pfad/zum/video.mp4 /pfad/zur/fixationen.csv
 ```
 
-Oder ohne Argumente (dann Eingabe der Pfade im Terminal).
+**Erster Parameter:** Pfad zur MP4-Datei
+**Zweiter Parameter:** Pfad zur CSV-Datei
+
+Ohne Argumente startet das Tool mit Eingabeaufforderung im Terminal.
 
 ### CSV-Format
 
 Die CSV muss folgende Spalten enthalten (Trennzeichen `;` oder `,` wird automatisch erkannt):
 
-| Fixations_ID | Zeit | Start_Frame | End_Frame | Dauer (Frames) | AOI |
-|---|---|---|---|---|---|
+| Fixations_ID | Start_Frame | End_Frame | Dauer (Frames) | AOI |
+|---|---|---|---|---|
 
 `AOI` darf leer sein — das Tool beginnt bei der ersten leeren Zeile.
 
