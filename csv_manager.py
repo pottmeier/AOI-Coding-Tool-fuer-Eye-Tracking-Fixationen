@@ -13,7 +13,9 @@ class CsvManager:
         self._logger = logger
 
     def load(self, path: str) -> None:
-        self._df = pd.read_csv(path, sep=None, engine="python")
+        self._df = pd.read_csv(path, sep=None, engine="python", dtype={"AOI": str})
+        if "AOI" in self._df.columns:
+            self._df["AOI"] = self._df["AOI"].fillna("").astype(str)
         self._path = path
         self._annotations_since_save = 0
         self._current_index = 0
